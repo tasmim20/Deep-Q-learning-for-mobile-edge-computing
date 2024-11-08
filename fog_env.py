@@ -7,6 +7,7 @@ class Offload:
 
     def __init__(self, num_iot, num_fog, num_time, max_delay):
 
+
         # INPUT DATA
         self.n_iot = num_iot
         self.n_fog = num_fog
@@ -48,6 +49,16 @@ class Offload:
         self.Queue_iot_comp = list()
         self.Queue_iot_tran = list()
         self.Queue_fog_comp = list()
+
+        
+# Add a task dependency matrix (optional)
+        # For example, task 1 depends on task 0, task 2 depends on task 1
+        self.task_dependency_matrix = [
+            [0, 1],  # Task 0 must be completed before Task 1
+            [1, 2]   # Task 1 must be completed before Task 2
+        ]
+        #or
+        self.task_graph = {0: [1], 1: [2]}  # Task 0 -> Task 1 -> Task 2
 
         for iot in range(self.n_iot):
             self.Queue_iot_comp.append(queue.Queue())

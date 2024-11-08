@@ -16,7 +16,7 @@ class DeepQNetwork:
                  replace_target_iter = 200,  # each 200 steps, update target net
                  memory_size = 500,  # maximum of memory
                  batch_size=32,
-                 e_greedy_increment= 0.00025,
+                      e_greedy_increment= 0.00025,
                  n_lstm_step = 10,
                  dueling = True,
                  double_q = True,
